@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .div {width: 25px; height: 25px;background-color:yellow; margin:1px;}
+        </style>
+    </head>
+    <body>
+        <div id="outer">
+
+            <div id="div1" class="div">
+
+            </div>
+            <div id="div2" class = "div">
+
+            </div>
+            <div id="div3" class="div">
+
+            </div>
+            <div id="div4" class = "div">
+
+            </div>
+            <div id="div5" class="div">
+
+            </div>
+            <div id="div6" class = "div">
+
+            </div>
+            <div id="div7" class="div">
+
+            </div>
+            <div id="div8" class = "div">
+
+            </div>
+            <div id="div9" class="div">
+
+            </div>
+            <div id="div10" class = "div">
+
+            </div>
+            <div id="div11" class="div">
+
+            </div>
+            <div id="div12" class = "div">
+
+            </div>
+
+        </div>
+        <p id="para">
+            
+        </p>
+        <script>
+            const DIV1 = document.querySelector("#div1");
+            const DIV2 = document.querySelector("#div2");
+            const OUTER = document.querySelector("#outer");
+            const PARA = document.querySelector("#para");
+            function whatIsMyId() {
+                return "Hi from " + document.querySelector(element).id;
+            }
+
+            function hi1(e) {
+                console.log("Hi from " + DIV1.id);
+            }
+
+            function hi2() {
+                console.log("Hi from " + DIV2.id);
+            }
+
+//            OUTER.onclick = function(){hiAll(this);};
+//            function hiAll(e){
+//                console.log("outer id is : " +e.id);
+//                console.log("inner id is : " + e.target.id);
+//            }
+
+            OUTER.onclick = function (e) {
+//                console.log("outer id is : " + this.id);
+//                console.log("inner id is : " + e.target.id);
+                  PARA.innerHTML = "outer id is : " + this.id + " | " +
+                          " inner id is: " + e.target.id;
+            }
+            //OUTER.addEventListener('click', function(){hiAll(this);}, false);
+
+//            
+//            OUTER.onclick = function() {
+//                console.log("outer id is : " +this.id);
+//                console.log("inner id is : " + this.target.id);
+//            }
+
+            //DIV1.onclick = function(){console.log("Hi from " + DIV1.id)};
+            //DIV1.addEventListener('click', hi1, false);
+
+//    function hiOuter(){
+//                
+//            }
+//            
+//            document.querySelector("#div1").onclick = function(e) { 
+//                console.log(this.id); 
+//                console.log(e.target.parentNode.id)
+//            }; 
+
+            //document.querySelector("#div1").click();
+            
+            
+        </script>
+    </body>
+</html>

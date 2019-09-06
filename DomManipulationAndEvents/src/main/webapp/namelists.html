@@ -1,0 +1,60 @@
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id = "names">
+            
+        </div>
+        <form>
+            Input name: <input type="text" id="text" name="name"><br>
+            <input id="addbutton" type="submit" value="submit"><br>
+            <input id="removefirstbutton" type="submit" value="remove first name"><br>
+            <input id="removelastbutton" type="submit" value="remove last name">
+        </form>
+        <script>
+            const TEXTAREA = document.querySelector("#text");
+            const ADDBUTTON = document.querySelector("#addbutton");
+            const NAMELIST = document.querySelector("#names");
+            const REMOVEFIRST = document.querySelector("#removefirstbutton");
+            const REMOVELAST = document.querySelector("#removelastbutton");
+            var names = ["Lars", "Jan", "Peter", "Bo", "Frederik"];
+            
+            var namesToHTML = function (names) {
+                var result = names.map(x => "<li>" + x + "</li>");
+                result.unshift("<ul>");
+                result.push("<ul>");
+                //result.join('');
+                return result.join('');
+            };
+            NAMELIST.innerHTML = namesToHTML(names);
+            
+            function addToNames(name){
+                names.push(name);
+            }
+            
+            ADDBUTTON.onclick = function(e){
+                e.preventDefault();
+                addToNames(TEXTAREA.value);
+                NAMELIST.innerHTML = namesToHTML(names);
+                TEXTAREA.value = "";
+            };
+            
+            REMOVEFIRST.onclick = function(e){
+                e.preventDefault();
+                names.shift();
+                NAMELIST.innerHTML = namesToHTML(names);
+            }
+            
+            REMOVELAST.onclick = function(e){
+                e.preventDefault();
+                names.pop();
+                NAMELIST.innerHTML = namesToHTML(names);
+            }
+            
+        </script>
+    </body>
+</html>

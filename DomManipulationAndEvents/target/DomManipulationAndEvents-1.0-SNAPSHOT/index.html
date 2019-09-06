@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <div id="div1">
+            <h3>div1</h3>
+        </div>
+        <div id="div2">
+            <h3>div2</h3>
+        </div>
+        <div id="div3">
+            <h3>div3</h3>
+        </div>
+        <button onclick="colorChange()">
+            Change the color of divs
+        </button>
+        <script>
+            document.querySelector("#div1").style.backgroundColor = "red";
+            document.querySelector("#div2").style.backgroundColor = "green";
+            document.querySelector("#div3").style.backgroundColor = "blue";
+
+            function colorChange() {
+                document.querySelector("#div1").style.backgroundColor = "grey";
+                document.querySelector("#div2").style.backgroundColor = "orange";
+                document.querySelector("#div3").style.backgroundColor = "black";
+            }
+        </script>
+    </body>
+
+
+
+</html>

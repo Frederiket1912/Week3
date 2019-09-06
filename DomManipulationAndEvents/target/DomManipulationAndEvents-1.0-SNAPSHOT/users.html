@@ -1,0 +1,63 @@
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    </head>
+    <body>
+        <form>
+            <input type="text" id="userid">
+            <input type="submit" id="getuser" value="Get User">
+            <input type="submit" id="getall" value="Get All Users">
+        </form>
+        <div id = "userinfo">
+
+        </div>
+        <script>
+            const TEXTFIELD = document.querySelector("#userid");
+            const GETUSER = document.querySelector("#getuser");
+            const USERINFO = document.querySelector("#userinfo");
+            const GETALL = document.querySelector("#getall");
+
+            GETUSER.onclick = function (e) {
+                e.preventDefault();
+                let url = "https://jsonplaceholder.typicode.com/users/" + TEXTFIELD.value;
+                fetch(url)
+                        .then(res => res.json()) //in flow1, just do it
+                        .then(data => {
+                            // Inside this callback, and only here, the response data is available
+                            console.log("data", data);
+                            //USERINFO.innerHTML = JSON.stringify(data);
+                            /* data now contains the response, converted to JavaScript
+                             Observe the output from the log-output above
+                             Now, just build your DOM changes using the data*/
+                        })
+
+            }
+            
+            function usersToTable(users){
+                var tableinfo = users.map(x => "<tr><td>" + x.name + "</td><td>" + x.phone + "</td></tr>");
+                tableinfo.unshift("<table class=\"table\"><tr><th>Name</th><th>Phone</th></tr>")
+                tableinfo.push("</table>");
+                return tableinfo.join('');
+            }
+            
+            GETALL.onclick = function (e) {
+                e.preventDefault();
+                let url = "https://jsonplaceholder.typicode.com/users";
+                fetch(url)
+                        .then(res => res.json()) //in flow1, just do it
+                        .then(data => {
+                            // Inside this callback, and only here, the response data is available
+                            console.log("data", data);
+                            USERINFO.innerHTML = usersToTable(data);
+                            /* data now contains the response, converted to JavaScript
+                             Observe the output from the log-output above
+                             Now, just build your DOM changes using the data*/
+                        })
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div id="carstable">
+            
+        </div>
+        <form>
+            Price: <input type="text" id="pricetext">
+            <input type="submit" id="pricebutton" value="Price less than">
+        </form>
+        <script>
+            const CARSTABLE = document.querySelector("#carstable");
+            const PRICETEXT = document.querySelector("#pricetext");
+            const PRICEBUTTON = document.querySelector("#pricebutton");
+            var cars = [
+                {id: 1, year: 1997, make: 'Ford', model: 'E350', price: 3000},
+                {id: 2, year: 1999, make: 'Chevy', model: 'Venture', price: 4900},
+                {id: 3, year: 2000, make: 'Chevy', model: 'Venture', price: 5000},
+                {id: 4, year: 1996, make: 'Jeep', model: 'Grand Cherokee', price: 4799},
+                {id: 5, year: 2005, make: 'Volvo', model: 'V70', price: 44799}
+            ];
+
+            var carsNewerThanYear = function (cars, year) {
+                return cars.filter(x => x.year > year);
+            };
+
+            var carsOfMake = function (cars, make) {
+                return cars.filter(x => x.make === make);
+            };
+
+            var carsCheaperThan = function (cars, price) {
+                return cars.filter(x => x.price < price);
+            };
+            
+            function carsToHTMLTable(cars){
+                var HTML = cars.map(x => "<tr><td>" + x.id + "</td><td>" + x.year + "</td><td>" + x.make + "</td><td>" + x.model + "</td><td>" + x.price + "</td></tr>");
+                HTML.unshift("<table class=\"table\"><tr><th>id</th><th>Year</th><th>Make</th><th>Model</th><th>Price</th></tr>");
+                HTML.push("</table>");
+                return HTML.join('');
+            }
+            
+            CARSTABLE.innerHTML = carsToHTMLTable(cars);
+            
+            PRICEBUTTON.onclick = function(e){
+                e.preventDefault();
+                let cheapercars = carsCheaperThan(cars, PRICETEXT.value);
+                CARSTABLE.innerHTML = carsToHTMLTable(cheapercars);
+                PRICETEXT.value = "";
+            }
+        </script>
+    </body>
+</html>
