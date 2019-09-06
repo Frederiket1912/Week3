@@ -29,7 +29,7 @@ Se projektet movieexercise for besvarelse.
 **7) Kunne demonstrere et CI/Continuos Delivery Workflow**
  - Travis blev integreret i mit movieexercise projekt, så det er vel et eksempel. Ved ikke rigtigt hvad der skal forstås ved "demonstrere".
  
- ##Tirsdag:
+ ## Tirsdag:
  
  Se MovieResourceTest i movieexercise projektet. Jeg har udkommenteret noget og valgte til sidst at disable alle tests da de gav problemer med Travis. Testene virker lokalt, men ikke på Travis og jeg nåede ikke at få svar på hvorfor da jeg fandt ud af det om fredagen.
  
@@ -41,7 +41,7 @@ Se projektet movieexercise for besvarelse.
  **2) Kunne demonstrere et eksempel, involverende både unit/integrations-test samt deployment afviklet af Travis**
   - Som sagt have jeg problemer med at Travis ikke kørte testene i movieexercise projektet på samme måde som de kørte lokalt, så jeg fik det kun deployed via Travis efter jeg havde disabled tests.
   
-##Onsdag:
+## Onsdag:
 
 Se projektet DomManipulationAndEvents -> Web Pages -> js for dagesn exercises.
 names.js er exercises med array metoder, functionsAndCallbacks.js er alle andre exercises (jeg burde helt sikker have delt det op i flere javascript filer). Nogle ting i functionsAndCallbacks.js er udkommenteret, men det er kun fordi det skabte en masse clutter i terminalen når man skulle runne det hele.
@@ -60,7 +60,7 @@ names.js er exercises med array metoder, functionsAndCallbacks.js er alle andre 
 **4) Kunne diskutere hvad klientside JavaScript tilføjer til webapplikationer.**
  - Javascript kan gøre en side dynamisk uden at den skal reloade hele html dokumenter hver gang. Man kan binde events (clicks, mouse over, timers) til forskellige elementer på html siden og kører functioner der ændre ting på selve siden, fx kan man sætte innerHTML og value i forskellige elementer, eller ændre deres classes så ens css viser elementet på en ny måde.
  
- ##Torsdag: 
+ ## Torsdag: 
  
  Se projektet DomManipulationAndEvents for besvarelser på de forskellige html sider.
  
@@ -80,8 +80,8 @@ names.js er exercises med array metoder, functionsAndCallbacks.js er alle andre 
 
 **5) Kunne demonstrere brug af fetch til serverkald og brug af json data til DOM manipulation**
  - Se users.html i DomManipulationAndEvents projektet hvor vi får et array med brugere fra et fetch kald og i functionen usersToTable() laver det om til html, vi med at et klik på en knap kan smide ind i et element på siden.
- 
- ##Fredag
+  
+ ## Fredag
  
  Jeg har desværre ikke lavet fredagsopgaven, da jeg har problemer med at tilgå endpoints i mit movieexercise projekt efter det er deployed. Jeg håber det går da jeg fik torsdagsopgaven med fetch til at virke, og selve JS delen ville næsten bare være copy and paste.
  
