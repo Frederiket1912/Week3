@@ -1,6 +1,7 @@
 # Week3
 
-Jeg kan desværre ikke linke til mine REST endpoints i movie opgaven, da jeg ikke kunne få dem til at virke efter de var deployed.
+Mine REST endpoints i movie opgaven kunne jeg desværre ikke få til at virke efter de var deployed. 
+Se https://frederiket.dk/rest-jpa-devops-starter/api/movie/all for et eksempel på fejlen.
 
 ## Mandag:
 
