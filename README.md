@@ -1,7 +1,7 @@
 # Week3
 
 Mine REST endpoints i movie opgaven kunne jeg desværre ikke få til at virke efter de var deployed. 
-    Se https://frederiket.dk/rest-jpa-devops-starter/api/movie/all for et eksempel på fejlen.
+    Se https://frederiket.dk/movieAPI/api/movie/all for et eksempel på fejlen.
 
 ## Mandag:
 
